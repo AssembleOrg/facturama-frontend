@@ -1,0 +1,196 @@
+/* ===== PLANTILLA MODERNA ===== */
+.template-modern {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.template-modern .invoice-header {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 3px solid #4f46e5;
+  backdrop-filter: blur(10px);
+}
+
+.template-modern .invoice-header h1 {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.template-modern .client-section {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1f2937;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.template-modern .invoice-header p {
+  color: white !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.template-modern .items-table thead {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.template-modern .items-table th {
+  color: white;
+  font-weight: 600;
+}
+
+.template-modern .totals-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== PLANTILLA CLÁSICA ===== */
+.template-classic {
+  background: white;
+  border: 2px solid #1f2937;
+  color: #1f2937;
+}
+
+.template-classic .invoice-header {
+  background: #f9fafb;
+  border-bottom: 3px solid #1f2937;
+}
+
+.template-classic .invoice-header h1 {
+  color: #1f2937;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+}
+
+.template-classic .client-section {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+}
+
+.template-classic .items-table {
+  border: 2px solid #1f2937;
+}
+
+.template-classic .items-table thead {
+  background: #1f2937;
+}
+
+.template-classic .items-table th {
+  color: white;
+  font-weight: bold;
+}
+
+.template-classic .items-table td {
+  border-bottom: 1px solid #d1d5db;
+}
+
+.template-classic .totals-section {
+  border: 2px solid #1f2937;
+  background: #f9fafb;
+}
+
+/* ===== PLANTILLA MINIMALISTA ===== */
+.template-minimal {
+  background: white;
+  color: #374151;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+.template-minimal .invoice-header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.template-minimal .invoice-header h1 {
+  color: #111827;
+  font-weight: 300;
+  font-size: 2.5rem;
+  letter-spacing: -0.025em;
+}
+
+.template-minimal .client-section {
+  background: #fafafa;
+  border-left: 4px solid #6366f1;
+}
+
+.template-minimal .items-table {
+  border: none;
+}
+
+.template-minimal .items-table thead {
+  background: none;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.template-minimal .items-table th {
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.template-minimal .items-table td {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.template-minimal .totals-section {
+  border-top: 2px solid #e5e7eb;
+  background: none;
+}
+
+/* ===== ESTILOS GENERALES PARA TODAS LAS PLANTILLAS ===== */
+.invoice-preview {
+  transition: all 0.3s ease;
+  min-height: 800px;
+}
+
+.invoice-header {
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.client-section {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.items-table th,
+.items-table td {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.items-table th:last-child,
+.items-table td:last-child {
+  text-align: right;
+}
+
+.items-table th:nth-child(2),
+.items-table td:nth-child(2) {
+  text-align: center;
+}
+
+.totals-section {
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-left: auto;
+  width: 300px;
+}
+
+.company-logo {
+  max-height: 80px;
+  max-width: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
