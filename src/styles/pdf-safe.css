@@ -1,0 +1,207 @@
+/* CSS específico para generación de PDF - Colores compatibles con html2canvas */
+
+/* Reemplazar colores OKLCH con RGB/HEX equivalentes */
+.pdf-mode {
+  /* Variables de color compatibles */
+  --background: #ffffff;
+  --foreground: #252525;
+  --card: #ffffff;
+  --card-foreground: #252525;
+  --popover: #ffffff;
+  --popover-foreground: #252525;
+  --primary: #333333;
+  --primary-foreground: #fafafa;
+  --secondary: #f7f7f7;
+  --secondary-foreground: #333333;
+  --muted: #f7f7f7;
+  --muted-foreground: #888888;
+  --accent: #f7f7f7;
+  --accent-foreground: #333333;
+  --destructive: #dc2626;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #b3b3b3;
+}
+
+/* Aplicar colores directamente a las clases de Tailwind */
+.pdf-mode .bg-white {
+  background-color: #ffffff !important;
+}
+.pdf-mode .bg-gray-50 {
+  background-color: #f9fafb !important;
+}
+.pdf-mode .bg-gray-100 {
+  background-color: #f3f4f6 !important;
+}
+.pdf-mode .bg-gray-200 {
+  background-color: #e5e7eb !important;
+}
+.pdf-mode .bg-gray-300 {
+  background-color: #d1d5db !important;
+}
+.pdf-mode .bg-gray-400 {
+  background-color: #9ca3af !important;
+}
+.pdf-mode .bg-gray-500 {
+  background-color: #6b7280 !important;
+}
+.pdf-mode .bg-gray-600 {
+  background-color: #4b5563 !important;
+}
+.pdf-mode .bg-gray-700 {
+  background-color: #374151 !important;
+}
+.pdf-mode .bg-gray-800 {
+  background-color: #1f2937 !important;
+}
+.pdf-mode .bg-gray-900 {
+  background-color: #111827 !important;
+}
+
+.pdf-mode .text-white {
+  color: #ffffff !important;
+}
+.pdf-mode .text-black {
+  color: #000000 !important;
+}
+.pdf-mode .text-gray-50 {
+  color: #f9fafb !important;
+}
+.pdf-mode .text-gray-100 {
+  color: #f3f4f6 !important;
+}
+.pdf-mode .text-gray-200 {
+  color: #e5e7eb !important;
+}
+.pdf-mode .text-gray-300 {
+  color: #d1d5db !important;
+}
+.pdf-mode .text-gray-400 {
+  color: #9ca3af !important;
+}
+.pdf-mode .text-gray-500 {
+  color: #6b7280 !important;
+}
+.pdf-mode .text-gray-600 {
+  color: #4b5563 !important;
+}
+.pdf-mode .text-gray-700 {
+  color: #374151 !important;
+}
+.pdf-mode .text-gray-800 {
+  color: #1f2937 !important;
+}
+.pdf-mode .text-gray-900 {
+  color: #111827 !important;
+}
+
+.pdf-mode .border-gray-200 {
+  border-color: #e5e7eb !important;
+}
+.pdf-mode .border-gray-300 {
+  border-color: #d1d5db !important;
+}
+.pdf-mode .border-gray-400 {
+  border-color: #9ca3af !important;
+}
+.pdf-mode .border-gray-500 {
+  border-color: #6b7280 !important;
+}
+
+/* Colores específicos para las plantillas */
+
+/* Plantilla Moderna */
+.pdf-mode .template-modern {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: #ffffff !important;
+}
+
+.pdf-mode .template-modern .invoice-header {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-bottom: 3px solid #4f46e5 !important;
+}
+
+.pdf-mode .template-modern .client-section {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #1f2937 !important;
+}
+
+.pdf-mode .template-modern .items-table thead {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.pdf-mode .template-modern .totals-section {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Plantilla Clásica */
+.pdf-mode .template-classic {
+  background: #ffffff !important;
+  border: 2px solid #1f2937 !important;
+  color: #1f2937 !important;
+}
+
+.pdf-mode .template-classic .invoice-header {
+  background: #f9fafb !important;
+  border-bottom: 3px solid #1f2937 !important;
+}
+
+.pdf-mode .template-classic .client-section {
+  background: #f3f4f6 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.pdf-mode .template-classic .items-table {
+  border: 2px solid #1f2937 !important;
+}
+
+.pdf-mode .template-classic .items-table thead {
+  background: #1f2937 !important;
+}
+
+.pdf-mode .template-classic .items-table th {
+  color: #ffffff !important;
+}
+
+.pdf-mode .template-classic .totals-section {
+  border: 2px solid #1f2937 !important;
+  background: #f9fafb !important;
+}
+
+/* Plantilla Minimalista */
+.pdf-mode .template-minimal {
+  background: #ffffff !important;
+  color: #374151 !important;
+}
+
+.pdf-mode .template-minimal .invoice-header {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.pdf-mode .template-minimal .client-section {
+  background: #fafafa !important;
+  border-left: 4px solid #6366f1 !important;
+}
+
+.pdf-mode .template-minimal .items-table thead {
+  border-bottom: 2px solid #e5e7eb !important;
+}
+
+.pdf-mode .template-minimal .items-table th {
+  color: #6b7280 !important;
+}
+
+.pdf-mode .template-minimal .items-table td {
+  border-bottom: 1px solid #f3f4f6 !important;
+}
+
+.pdf-mode .template-minimal .totals-section {
+  border-top: 2px solid #e5e7eb !important;
+}
+
+/* Asegurar que todos los elementos tengan colores explícitos */
+.pdf-mode * {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}

@@ -146,6 +146,15 @@
 .invoice-preview {
   transition: all 0.3s ease;
   min-height: 800px;
+  /* Estilos específicos para mejor renderizado en PDF */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+  /* Asegurar que las fuentes se rendericen correctamente */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Evitar breaks de página */
+  page-break-inside: avoid;
 }
 
 .invoice-header {
@@ -193,4 +202,9 @@
   max-width: 200px;
   object-fit: contain;
   margin-bottom: 1rem;
+  /* Mejorar renderizado de imágenes en PDF */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* Asegurar que la imagen se cargue antes del PDF */
+  display: block;
 }

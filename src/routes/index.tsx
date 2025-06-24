@@ -1,16 +1,18 @@
+import React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { Input } from '../components/ui/input'
-import { NumberInput } from '../components/ui/number-input'
+
 import useInvoiceStore from '../store/invoiceStore'
 import useTemplateStore from '../store/templateStore'
 import useInvoiceConfigStore from '../store/invoiceConfigStore'
 import { useInvoiceCalculations } from '../hooks/useInvoiceCalculations'
-import { usePDFGenerator } from '../hooks/usePDFGenerator'
 import InvoiceConfig from '../components/invoice/InvoiceConfig'
 import TableColumnsModal from '../components/invoice/TableColumnsModal'
 import ProductsModal from '../components/invoice/ProductsModal'
+import { Toast, useToast } from '../components/ui/toast'
+import { SimplePDFDownloadButton } from '../components/invoice/SimplePDFInvoice'
 
 // Componente para el formulario (columna izquierda)
 const InvoiceForm = () => {
@@ -94,7 +96,7 @@ const InvoiceForm = () => {
 
 // Componente para la vista previa (columna centro)
 const InvoicePreview = () => {
-  const { emisor, receptor, items } = useInvoiceStore()
+  const { emisor, receptor } = useInvoiceStore()
   const { selectedTemplate } = useTemplateStore()
   const {
     tableFields,
@@ -463,6 +465,13 @@ const TemplateSelector = () => {
     <Card>
       <CardHeader>
         <CardTitle>Plantillas</CardTitle>
+        <div className="mt-2 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+          <p className="text-xs text-blue-700">
+            <strong>Demo:</strong> Solo la plantilla Clásica genera PDFs
+            completos. Las otras plantillas requieren backend con Puppeteer para
+            PDFs de alta fidelidad.
+          </p>
+        </div>
       </CardHeader>
       <CardContent className="space-y-3">
         {availableTemplates.map((template) => (
@@ -472,7 +481,7 @@ const TemplateSelector = () => {
               selectedTemplate === template.id
                 ? 'border-blue-500 bg-blue-50'
                 : 'border-gray-200 hover:border-gray-300'
-            }`}
+            } ${template.id !== 'classic' ? 'opacity-75' : ''}`}
             onClick={() => setTemplate(template.id)}
           >
             <div className="flex items-center justify-between">
@@ -495,23 +504,28 @@ const TemplateSelector = () => {
 
 // Componente principal
 function HomePage() {
-  const { generatePDF, isGenerating } = usePDFGenerator()
+  const { toast, hideToast } = useToast()
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Toast Notifications */}
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        isVisible={toast.isVisible}
+        onClose={hideToast}
+      />
+
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-gray-900">Facturama MVP</h1>
-            <Button
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700"
-              onClick={generatePDF}
-              disabled={isGenerating}
-            >
-              {isGenerating ? 'Generando PDF...' : 'Generar PDF'}
-            </Button>
+            <h1 className="text-2xl font-bold text-gray-900">
+              Facturama MVP - Demo
+            </h1>
+            <div className="flex gap-3">
+              <SimplePDFDownloadButton />
+            </div>
           </div>
         </div>
       </header>

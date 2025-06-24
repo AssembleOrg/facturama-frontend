@@ -14,26 +14,26 @@ interface TemplateStore {
 }
 
 const useTemplateStore = create<TemplateStore>((set) => ({
-  selectedTemplate: 'minimal',
+  selectedTemplate: 'classic',
 
   availableTemplates: [
     {
-      id: 'modern',
-      name: 'Moderno',
-      className: 'template-modern',
-      description: 'Diseño moderno con gradientes y colores vibrantes',
+      id: 'classic',
+      name: '✅ Clásico',
+      className: 'template-classic',
+      description: 'Diseño tradicional - PDF funcional',
     },
     {
-      id: 'classic',
-      name: 'Clásico',
-      className: 'template-classic',
-      description: 'Diseño tradicional y profesional',
+      id: 'modern',
+      name: '🚧 Moderno',
+      className: 'template-modern',
+      description: 'Requiere backend para PDF completo',
     },
     {
       id: 'minimal',
-      name: 'Minimalista',
+      name: '🚧 Minimalista',
       className: 'template-minimal',
-      description: 'Diseño limpio y elegante',
+      description: 'Requiere backend para PDF completo',
     },
   ],
 

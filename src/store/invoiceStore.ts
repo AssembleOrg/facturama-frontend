@@ -55,28 +55,36 @@ const useInvoiceStore = create<InvoiceStore>()(
     (set) => ({
       // === ESTADO INICIAL ===
       emisor: {
-        companyName: '',
-        companyAddress: '',
-        companyCuit: '',
-        companyPhone: '',
+        companyName: 'Mi Empresa S.A.',
+        companyAddress: 'Av. Corrientes 1234, CABA, Argentina',
+        companyCuit: '20-12345678-9',
+        companyPhone: '+54 11 4567-8900',
         logo: null,
       },
 
       receptor: {
-        clientName: '',
-        clientAddress: '',
-        clientCuit: '',
-        clientEmail: '',
+        clientName: 'Cliente Demo S.R.L.',
+        clientAddress: 'Florida 456, CABA, Argentina',
+        clientCuit: '30-87654321-2',
+        clientEmail: 'cliente@demo.com',
       },
 
       items: [
         {
           id: 1,
-          code: '',
-          description: '',
+          code: 'SERV001',
+          description: 'Desarrollo de sitio web',
           quantity: 1,
-          price: 0,
+          price: 50000,
           discount: 0,
+        },
+        {
+          id: 2,
+          code: 'SERV002',
+          description: 'Mantenimiento mensual',
+          quantity: 3,
+          price: 15000,
+          discount: 10,
         },
       ],
 
